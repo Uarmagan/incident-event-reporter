@@ -11,9 +11,7 @@ function getById(req, res) {
   const event = eventsRepo.getById(req.query.id);
 
   if (!event) throw 'event Not Found';
-  setTimeout(() => {
-    return res.status(200).json(event);
-  }, 3000);
+  return res.status(200).json(event);
 }
 
 function update(req, res) {
@@ -22,9 +20,7 @@ function update(req, res) {
   if (!event) throw 'event Not Found';
 
   eventsRepo.update(req.query.id, req.body);
-  setTimeout(() => {
-    return res.status(200).json({});
-  }, 3000);
+  return res.status(200).json({});
 }
 
 function _delete(req, res) {

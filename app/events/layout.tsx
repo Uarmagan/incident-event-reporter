@@ -24,7 +24,7 @@ export default async function RootLayout({ children }: any) {
     {
       name: 'Events',
       icon: FolderIcon,
-      href: '#',
+      href: '/events',
       count: numberOfEvents,
       current: true,
     },
@@ -95,7 +95,7 @@ export default async function RootLayout({ children }: any) {
             </div>
           </div>
           <main role='main' className='w-full pt-1'>
-            {children}
+            <div className='w-full px-5 pt-8'>{children}</div>
           </main>
         </div>
       </body>
