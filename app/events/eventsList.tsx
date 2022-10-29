@@ -1,10 +1,14 @@
-async function getAllEvents() {
+import Image from 'next/image';
+import { classNames } from '../../utils/tailwind.util';
+import { Event, Owner } from './events.interface';
+import { EventsAvatars } from './eventsAvatars';
+async function getAllEvents(): Promise<Event[]> {
   const res = await fetch('http://localhost:3000/api/events');
   return res.json();
 }
 
 export default async function EventsList() {
-  const events = await getAllEvents();
+  const events: Event[] = await getAllEvents();
   return (
     <div className='w-full px-5'>
       <div className='sm:flex sm:items-center'>
@@ -18,7 +22,7 @@ export default async function EventsList() {
         <div className='mt-4 sm:mt-0 sm:ml-16 sm:flex-none'>
           <button
             type='button'
-            className='inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto'
+            className='inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto'
           >
             Add Event
           </button>
@@ -79,11 +83,7 @@ export default async function EventsList() {
                           </div>
                         </td>
                         <td className='whitespace-nowrap px-3 py-4 text-sm text-gray-500'>
-                          <div className='text-gray-900'>
-                            {owners.map((owner) => (
-                              <p>{owner}</p>
-                            ))}
-                          </div>
+                          <EventsAvatars owners={owners} />
                         </td>
                         <td className='whitespace-nowrap px-3 py-4 text-sm text-gray-500'>
                           <span className='inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800'>

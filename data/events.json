@@ -3,7 +3,16 @@
     "id": "1",
     "domain": "electrical",
     "subDomain": "damaged wire",
-    "owners": ["tod", "phil", "stacy"],
+    "owners": [
+      {
+        "name": "John",
+        "avatar": "https://avatars.dicebear.com/api/avataaars/1.svg"
+      },
+      {
+        "name": "Tom",
+        "avatar": "https://avatars.dicebear.com/api/avataaars/12.svg"
+      }
+    ],
     "description": "looks like a rat chewed the wire off",
     "status": "ready",
     "createdDate": "2/2/2022"
@@ -12,7 +21,28 @@
     "id": "2",
     "domain": "electrical",
     "subDomain": "damaged wire",
-    "owners": ["tod", "phil", "stacy"],
+    "owners": [
+      {
+        "name": "John",
+        "avatar": "https://avatars.dicebear.com/api/avataaars/2.svg"
+      },
+      {
+        "name": "Tom",
+        "avatar": "https://avatars.dicebear.com/api/avataaars/12.svg"
+      },
+      {
+        "name": "Bob",
+        "avatar": "https://avatars.dicebear.com/api/avataaars/13.svg"
+      },
+      {
+        "name": "Alice",
+        "avatar": "https://avatars.dicebear.com/api/avataaars/14.svg"
+      },
+      {
+        "name": "Rita",
+        "avatar": "https://avatars.dicebear.com/api/avataaars/13.svg"
+      }
+    ],
     "description": "looks like a rat chewed the wire off",
     "status": "ready",
     "createdDate": "2/2/2022"
@@ -21,7 +51,24 @@
     "id": "3",
     "domain": "electrical",
     "subDomain": "damaged wire",
-    "owners": ["tod", "phil", "stacy"],
+    "owners": [
+      {
+        "name": "John",
+        "avatar": "https://avatars.dicebear.com/api/avataaars/3.svg"
+      },
+      {
+        "name": "Tom",
+        "avatar": "https://avatars.dicebear.com/api/avataaars/12.svg"
+      },
+      {
+        "name": "Bob",
+        "avatar": "https://avatars.dicebear.com/api/avataaars/13.svg"
+      },
+      {
+        "name": "Alice",
+        "avatar": "https://avatars.dicebear.com/api/avataaars/14.svg"
+      }
+    ],
     "description": "looks like a rat chewed the wire off",
     "status": "ready",
     "createdDate": "2/2/2022"
@@ -30,7 +77,12 @@
     "id": "4",
     "domain": "electrical",
     "subDomain": "damaged wire",
-    "owners": ["tod", "phil", "stacy"],
+    "owners": [
+      {
+        "name": "John",
+        "avatar": "https://avatars.dicebear.com/api/avataaars/4.svg"
+      }
+    ],
     "description": "looks like a rat chewed the wire off",
     "status": "ready",
     "createdDate": "2/2/2022"
@@ -39,7 +91,12 @@
     "id": "5",
     "domain": "electrical",
     "subDomain": "damaged wire",
-    "owners": ["tod", "phil", "stacy"],
+    "owners": [
+      {
+        "name": "John",
+        "avatar": "https://avatars.dicebear.com/api/avataaars/5.svg"
+      }
+    ],
     "description": "looks like a rat chewed the wire off",
     "status": "ready",
     "createdDate": "2/2/2022"

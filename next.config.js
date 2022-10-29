@@ -12,6 +12,12 @@ module.exports = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'avatars.dicebear.com',
+        port: '',
+        pathname: '/api/**',
+      },
     ],
   },
   async redirects() {
