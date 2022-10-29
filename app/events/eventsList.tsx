@@ -1,14 +1,14 @@
-import Image from 'next/image';
-import { classNames } from '../../utils/tailwind.util';
-import { Event, Owner } from './events.interface';
+'use client';
+import { use } from 'react';
+import { Event } from './events.interface';
 import { EventsAvatars } from './eventsAvatars';
-async function getAllEvents(): Promise<Event[]> {
+export const getAllEvents = async (): Promise<Event[]> => {
   const res = await fetch('http://localhost:3000/api/events');
   return res.json();
-}
+};
 
-export default async function EventsList() {
-  const events: Event[] = await getAllEvents();
+export default function EventsList() {
+  const events: Event[] = use(getAllEvents());
   return (
     <div className='w-full px-5'>
       <div className='sm:flex sm:items-center'>

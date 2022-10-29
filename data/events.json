@@ -100,5 +100,19 @@
     "description": "looks like a rat chewed the wire off",
     "status": "ready",
     "createdDate": "2/2/2022"
+  },
+  {
+    "id": "6",
+    "domain": "electrical",
+    "subDomain": "damaged wire",
+    "owners": [
+      {
+        "name": "John",
+        "avatar": "https://avatars.dicebear.com/api/avataaars/6.svg"
+      }
+    ],
+    "description": "looks like a rat chewed the wire off",
+    "status": "ready",
+    "createdDate": "2/2/2022"
   }
 ]
