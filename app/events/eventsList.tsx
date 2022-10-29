@@ -1,43 +1,10 @@
-const events = [
-  {
-    id: '1',
-    domain: 'electrical',
-    subDomain: 'damaged wire',
-    owners: ['tod', 'phil', 'stacy'],
-    description: 'looks like a rat chewed the wire off',
-    status: 'ready',
-    createdDate: '2/2/2022',
-  },
-  {
-    id: '2',
-    domain: 'electrical',
-    subDomain: 'damaged wire',
-    owners: ['tod', 'phil', 'stacy'],
-    description: 'looks like a rat chewed the wire off',
-    status: 'ready',
-    createdDate: '2/2/2022',
-  },
-  {
-    id: '3',
-    domain: 'electrical',
-    subDomain: 'damaged wire',
-    owners: ['tod', 'phil', 'stacy'],
-    description: 'looks like a rat chewed the wire off',
-    status: 'ready',
-    createdDate: '2/2/2022',
-  },
-  {
-    id: '4',
-    domain: 'electrical',
-    subDomain: 'damaged wire',
-    owners: ['tod', 'phil', 'stacy'],
-    description: 'looks like a rat chewed the wire off',
-    status: 'ready',
-    createdDate: '2/2/2022',
-  },
-];
+async function getAllEvents() {
+  const res = await fetch('http://localhost:3000/api/events');
+  return res.json();
+}
 
-export default function EventsList() {
+export default async function EventsList() {
+  const events = await getAllEvents();
   return (
     <div className='w-full px-5'>
       <div className='sm:flex sm:items-center'>

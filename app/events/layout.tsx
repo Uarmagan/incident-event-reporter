@@ -9,16 +9,35 @@ import {
 import './global.css';
 import { classNames } from '../../utils/tailwind.util';
 
-const navigation = [
-  { name: 'Dashboard', icon: HomeIcon, href: '#', current: false },
-  { name: 'Team', icon: UsersIcon, href: '#', count: 3, current: false },
-  { name: 'Events', icon: FolderIcon, href: '#', count: 4, current: true },
-  { name: 'Calendar', icon: CalendarIcon, href: '#', current: false },
-  { name: 'Documents', icon: InboxIcon, href: '#', count: 12, current: false },
-  { name: 'Reports', icon: ChartBarIcon, href: '#', current: false },
-];
+async function getNumberOfEvents() {
+  const res = await fetch('http://localhost:3000/api/events');
+  const data = await res.json();
+  return data.length;
+}
 
-export default function RootLayout({ children }: any) {
+export default async function RootLayout({ children }: any) {
+  const numberOfEvents = await getNumberOfEvents();
+
+  const navigation = [
+    { name: 'Dashboard', icon: HomeIcon, href: '#', current: false },
+    { name: 'Team', icon: UsersIcon, href: '#', count: 3, current: false },
+    {
+      name: 'Events',
+      icon: FolderIcon,
+      href: '#',
+      count: numberOfEvents,
+      current: true,
+    },
+    { name: 'Calendar', icon: CalendarIcon, href: '#', current: false },
+    {
+      name: 'Documents',
+      icon: InboxIcon,
+      href: '#',
+      count: 12,
+      current: false,
+    },
+    { name: 'Reports', icon: ChartBarIcon, href: '#', current: false },
+  ];
   return (
     <html lang='en'>
       <head>
