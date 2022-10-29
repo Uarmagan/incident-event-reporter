@@ -7,7 +7,7 @@ import {
   UsersIcon,
 } from '@heroicons/react/24/outline';
 import './global.css';
-import { classNames } from '../utils/tailwind.util';
+import { classNames } from '../../utils/tailwind.util';
 
 const navigation = [
   { name: 'Dashboard', icon: HomeIcon, href: '#', current: false },
