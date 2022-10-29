@@ -25,10 +25,10 @@ export default function RootLayout({ children }: any) {
         <title>Next.js</title>
       </head>
       <body className='mx-auto h-screen'>
-        <div className='grid grid-cols-[1fr_4fr] h-full'>
+        <div className='grid grid-cols-[1fr_4fr] h-full gap-1'>
           <div className='flex flex-grow flex-col overflow-y-auto border-r border-gray-200 bg-white pt-5 pb-4'>
             <div className='flex flex-shrink-0 items-center px-4'>
-              <h1 className='font-bold font-mono tracking-wider'>
+              <h1 className='font-black font-mono tracking-widest text-gray-600'>
                 Diamond Age
               </h1>
             </div>
@@ -75,7 +75,7 @@ export default function RootLayout({ children }: any) {
               </nav>
             </div>
           </div>
-          <main role='main' className='w-full sm:w-2/3 md:w-3/4 pt-1 px-2'>
+          <main role='main' className='w-full pt-1'>
             {children}
           </main>
         </div>
