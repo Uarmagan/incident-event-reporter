@@ -15,7 +15,7 @@ export type Owner = {
 
 type domainKeys = keyof domains;
 
-type Status = 'Active' | 'In Progress' | 'Fixed';
+export type Status = 'Ready' | 'In Progress' | 'Fixed';
 
 type domains = {
   electrical: {

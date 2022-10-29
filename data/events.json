@@ -14,7 +14,7 @@
       }
     ],
     "description": "looks like a rat chewed the wire off",
-    "status": "ready",
+    "status": "Ready",
     "createdDate": "2/2/2022"
   },
   {
@@ -44,7 +44,7 @@
       }
     ],
     "description": "looks like a rat chewed the wire off",
-    "status": "ready",
+    "status": "In Progress",
     "createdDate": "2/2/2022"
   },
   {
@@ -70,7 +70,7 @@
       }
     ],
     "description": "looks like a rat chewed the wire off",
-    "status": "ready",
+    "status": "Ready",
     "createdDate": "2/2/2022"
   },
   {
@@ -84,7 +84,7 @@
       }
     ],
     "description": "looks like a rat chewed the wire off",
-    "status": "ready",
+    "status": "Ready",
     "createdDate": "2/2/2022"
   },
   {
@@ -98,7 +98,7 @@
       }
     ],
     "description": "looks like a rat chewed the wire off",
-    "status": "ready",
+    "status": "Ready",
     "createdDate": "2/2/2022"
   },
   {
@@ -112,7 +112,7 @@
       }
     ],
     "description": "looks like a rat chewed the wire off",
-    "status": "ready",
+    "status": "Ready",
     "createdDate": "2/2/2022"
   }
 ]

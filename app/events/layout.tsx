@@ -44,10 +44,10 @@ export default async function RootLayout({ children }: any) {
         <title>Next.js</title>
       </head>
       <body className='mx-auto h-screen'>
-        <div className='grid grid-cols-[1fr_4fr] h-full gap-1'>
+        <div className='grid h-full grid-cols-[1fr_4fr] gap-1'>
           <div className='flex flex-grow flex-col overflow-y-auto border-r border-gray-200 bg-white pt-5 pb-4'>
             <div className='flex flex-shrink-0 items-center px-4'>
-              <h1 className='font-black font-mono tracking-widest text-gray-600'>
+              <h1 className='font-mono font-black tracking-widest text-gray-600'>
                 Diamond Age
               </h1>
             </div>
@@ -64,7 +64,7 @@ export default async function RootLayout({ children }: any) {
                       item.current
                         ? 'bg-gray-100 text-gray-900'
                         : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900',
-                      'group flex items-center px-2 py-3 text-sm font-medium rounded-md'
+                      'group flex items-center rounded-md px-2 py-3 text-sm font-medium'
                     )}
                   >
                     <item.icon
@@ -72,7 +72,7 @@ export default async function RootLayout({ children }: any) {
                         item.current
                           ? 'text-gray-500'
                           : 'text-gray-400 group-hover:text-gray-500',
-                        'mr-3 flex-shrink-0 h-6 w-6'
+                        'mr-3 h-6 w-6 flex-shrink-0'
                       )}
                       aria-hidden='true'
                     />
@@ -83,7 +83,7 @@ export default async function RootLayout({ children }: any) {
                           item.current
                             ? 'bg-white'
                             : 'bg-gray-100 group-hover:bg-gray-200',
-                          'ml-3 inline-block py-0.5 px-3 text-xs font-medium rounded-full'
+                          'ml-3 inline-block rounded-full py-0.5 px-3 text-xs font-medium'
                         )}
                       >
                         {item.count}

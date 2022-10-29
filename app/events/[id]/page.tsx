@@ -1,5 +1,7 @@
-import { Event } from '../events.interface';
+'use client';
+import { Event, Status } from '../events.interface';
 import Image from 'next/image';
+import { use, useState } from 'react';
 
 async function getEventById(id: string) {
   return fetch(`http://localhost:3000/api/events/${id}`).then((res) =>
@@ -7,9 +9,11 @@ async function getEventById(id: string) {
   );
 }
 
-export default async function Page({ params }: { params: { id: string } }) {
-  const event = await (getEventById(params.id) as Promise<Event>);
+export default function Page({ params }: { params: { id: string } }) {
+  const event: Event = use(getEventById(params.id));
 
+  const [statusSelected, setStatusSelected] = useState<Status>(event.status);
+  console.log(statusSelected);
   return (
     <div className='overflow-hidden sm:rounded-lg'>
       <div className='py-5 '>
@@ -32,7 +36,27 @@ export default async function Page({ params }: { params: { id: string } }) {
           </div>
           <div className='sm:col-span-1'>
             <dt className='text-sm font-medium text-gray-500'>Status</dt>
-            <dd className='mt-1 text-sm text-gray-900'>{event.status}</dd>
+            <dd className='mt-1 text-sm text-gray-900'>
+              <dd className='mt-1 text-sm text-gray-900'>{event.status}</dd>
+
+              {/* <label
+                htmlFor='location'
+                className='block text-sm font-medium text-gray-700'
+              >
+                Location
+              </label>
+              <select
+                id='location'
+                name='location'
+                className='mt-1 block w-32 rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm'
+                defaultValue={statusSelected}
+                onChange={(e) => setStatusSelected(e.target.value as Status)}
+              >
+                <option>Active</option>
+                <option>In Progress</option>
+                <option>Fixed</option>
+              </select> */}
+            </dd>
           </div>
           <div className='sm:col-span-1'>
             <dt className='text-sm font-medium text-gray-500'>Created On</dt>
@@ -44,12 +68,12 @@ export default async function Page({ params }: { params: { id: string } }) {
           </div>
           <div className='sm:col-span-2'>
             <dt className='text-sm font-medium text-gray-500'>Owners</dt>
-            <dd className='mt-3 text-sm text-gray-900 w-3/4'>
+            <dd className='mt-3 w-3/4 text-sm text-gray-900'>
               <ul role='list' className='grid grid-cols-3 gap-2'>
                 {event.owners.map((owner, index) => (
                   <li
                     key={owner.name + index}
-                    className=' w-48 flex items-center justify-between py-3 pl-3 pr-4 text-sm divide-y divide-gray-200 rounded-md border border-gray-200 hover:cursor-pointer'
+                    className=' flex w-48 items-center justify-between divide-y divide-gray-200 rounded-md border border-gray-200 py-3 pl-3 pr-4 text-sm hover:cursor-pointer'
                   >
                     <div className='flex items-center'>
                       <Image
@@ -75,6 +99,21 @@ export default async function Page({ params }: { params: { id: string } }) {
             </dd>
           </div>
         </dl>
+        <div className='mt-10 flex space-x-5'>
+          <button
+            type='button'
+            className='inline-flex items-center rounded-md border border-transparent bg-green-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-75'
+            disabled={statusSelected === event.status}
+          >
+            Save
+          </button>
+          <button
+            type='button'
+            className=' inline-flex items-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
+          >
+            delete
+          </button>
+        </div>
       </div>
     </div>
   );

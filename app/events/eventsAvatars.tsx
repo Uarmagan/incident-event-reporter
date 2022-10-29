@@ -23,7 +23,7 @@ export const EventsAvatars = ({ owners }: { owners: Owner[] }) => {
           />
         ))}
         {owners.length > 3 && (
-          <div className='h-8 w-8 rounded-full bg-gray-100 text-center font-semibold flex items-center justify-center '>
+          <div className='flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 text-center font-semibold '>
             {owners.length - 3}+
           </div>
         )}
