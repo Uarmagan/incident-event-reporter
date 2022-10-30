@@ -1,8 +1,10 @@
 'use client';
+
 import Link from 'next/link';
 import { use } from 'react';
 import { Event } from './events.interface';
 import { EventsAvatars } from './eventsAvatars';
+
 export const getAllEvents = async (): Promise<Event[]> => {
   const res = await fetch('http://localhost:3000/api/events');
   return res.json();
