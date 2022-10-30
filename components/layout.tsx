@@ -6,17 +6,10 @@ import {
   InboxIcon,
   UsersIcon,
 } from '@heroicons/react/24/outline';
-import './global.css';
-import { classNames } from '../../utils/tailwind.util';
+import { classNames } from '../utils/tailwind.util';
 
-async function getNumberOfEvents() {
-  const res = await fetch('http://localhost:3000/api/events');
-  const data = await res.json();
-  return data.length;
-}
-
-export default async function RootLayout({ children }: any) {
-  const numberOfEvents = await getNumberOfEvents();
+export default function Layout({ children }: any) {
+  const numberOfEvents = 5;
 
   const navigation = [
     { name: 'Dashboard', icon: HomeIcon, href: '#', current: false },

@@ -1,6 +1,6 @@
 'use client';
-import { classNames } from '../../utils/tailwind.util';
-import { Owner } from './events.interface';
+import { classNames } from '../utils/tailwind.util';
+import { Owner } from '../types/events.interface';
 import Image from 'next/image';
 import { Tooltip } from './tooltip';
 

@@ -1,6 +1,6 @@
 'use client';
 
-import { Event } from '../events.interface';
+import { Event } from '../types/events.interface';
 import Image from 'next/image';
 
 export const EventDetails = ({ event }: { event: Event }) => {
@@ -17,10 +17,10 @@ export const EventDetails = ({ event }: { event: Event }) => {
       </div>
       <div className='sm:col-span-1'>
         <dt className='text-sm font-medium text-gray-500'>Status</dt>
-        <dd className='mt-1 text-sm text-gray-900'>
-          <dd className='mt-1 text-sm text-gray-900'>{event.status}</dd>
 
-          {/* <label
+        <dd className='mt-1 text-sm text-gray-900'>{event.status}</dd>
+
+        {/* <label
         htmlFor='location'
         className='block text-sm font-medium text-gray-700'
       >
@@ -37,7 +37,6 @@ export const EventDetails = ({ event }: { event: Event }) => {
         <option>In Progress</option>
         <option>Fixed</option>
       </select> */}
-        </dd>
       </div>
       <div className='sm:col-span-1'>
         <dt className='text-sm font-medium text-gray-500'>Created On</dt>

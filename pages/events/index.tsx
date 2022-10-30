@@ -1,17 +1,13 @@
-'use client';
-
 import Link from 'next/link';
-import { use } from 'react';
-import { Event } from './events.interface';
-import { EventsAvatars } from './eventsAvatars';
+import { useEvents } from '../../hooks/useEvents';
+import { Event } from '../../types/events.interface';
+import { EventsAvatars } from '../../components/eventsAvatars';
 
-export const getAllEvents = async (): Promise<Event[]> => {
-  const res = await fetch('http://localhost:3000/api/events');
-  return res.json();
-};
-
-export default function EventsList() {
-  const events: Event[] = use(getAllEvents());
+export default function EventsPage(): JSX.Element {
+  const { data: events, isLoading } = useEvents();
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
   return (
     <>
       <div className='sm:flex sm:items-center'>
@@ -65,7 +61,7 @@ export default function EventsList() {
                   </tr>
                 </thead>
                 <tbody className='divide-y divide-gray-200 bg-white'>
-                  {events.map(
+                  {events?.map(
                     ({
                       id,
                       domain,
@@ -74,12 +70,15 @@ export default function EventsList() {
                       status,
                       createdDate,
                     }) => (
-                      <tr key={id} className='hover:bg-gray-100'>
-                        <td className='whitespace-nowrap py-4 pr-3 text-sm'>
-                          <Link
-                            href={`/events/${id}`}
-                            className='hover:bg-gray-200'
-                          >
+                      <Link
+                        href={`/events/${id}`}
+                        className='hover:bg-gray-200'
+                      >
+                        <tr
+                          key={id}
+                          className='cursor-pointer hover:bg-gray-100'
+                        >
+                          <td className=' whitespace-nowrap py-4 pr-3 text-sm'>
                             <div className='flex items-center'>
                               <div className='ml-4'>
                                 <div className='font-medium text-gray-900'>
@@ -88,30 +87,20 @@ export default function EventsList() {
                                 <div className='text-gray-500'>{subDomain}</div>
                               </div>
                             </div>
-                          </Link>
-                        </td>
-                        <td className='whitespace-nowrap px-3 py-4 text-sm text-gray-500'>
-                          <Link
-                            href={`/events/${id}`}
-                            className='hover:bg-gray-200'
-                          >
+                          </td>
+                          <td className='whitespace-nowrap px-3 py-4 text-sm text-gray-500'>
                             <EventsAvatars owners={owners} />
-                          </Link>
-                        </td>
-                        <td className='whitespace-nowrap px-3 py-4 text-sm text-gray-500'>
-                          <span className='inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800'>
-                            {status}
-                          </span>
-                        </td>
-                        <td className='whitespace-nowrap px-3 py-4 text-sm text-gray-500'>
-                          <Link
-                            href={`/events/${id}`}
-                            className='hover:bg-gray-200'
-                          >
+                          </td>
+                          <td className='whitespace-nowrap px-3 py-4 text-sm text-gray-500'>
+                            <span className='inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800'>
+                              {status}
+                            </span>
+                          </td>
+                          <td className='whitespace-nowrap px-3 py-4 text-sm text-gray-500'>
                             {createdDate}
-                          </Link>
-                        </td>
-                      </tr>
+                          </td>
+                        </tr>
+                      </Link>
                     )
                   )}
                 </tbody>
