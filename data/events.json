@@ -39,8 +39,16 @@
                 "avatar": "https://avatars.dicebear.com/api/avataaars/14.svg"
             },
             {
-                "name": "Rita",
-                "avatar": "https://avatars.dicebear.com/api/avataaars/13.svg"
+                "name": "Bulma",
+                "avatar": "https://avatars.dicebear.com/api/avataaars/a23bef2e-473b-42aa-a944-88f8b8d18011.svg"
+            },
+            {
+                "name": "Tommy",
+                "avatar": "https://avatars.dicebear.com/api/avataaars/93a40fc2-68dd-4699-90b5-e49a360d8316.svg"
+            },
+            {
+                "name": "Rob",
+                "avatar": "https://avatars.dicebear.com/api/avataaars/f99644ad-746e-4f5a-a71a-3b3291cb5cf6.svg"
             }
         ],
         "description": "looks like a rat chewed the wire off",
@@ -70,48 +78,6 @@
             }
         ],
         "description": "looks like a rat chewed the wire off",
-        "status": "Ready",
-        "createdDate": "2/2/2022"
-    },
-    {
-        "id": "4",
-        "domain": "electrical",
-        "subDomain": "damaged wire",
-        "owners": [
-            {
-                "name": "John",
-                "avatar": "https://avatars.dicebear.com/api/avataaars/4.svg"
-            }
-        ],
-        "description": "looks like a rat chewed the wire off",
-        "status": "Ready",
-        "createdDate": "2/2/2022"
-    },
-    {
-        "id": "5",
-        "domain": "electrical",
-        "subDomain": "damaged wire",
-        "owners": [
-            {
-                "name": "John",
-                "avatar": "https://avatars.dicebear.com/api/avataaars/5.svg"
-            }
-        ],
-        "description": "looks like a rat chewed the wire off",
-        "status": "Ready",
-        "createdDate": "2/2/2022"
-    },
-    {
-        "id": "6",
-        "domain": "electrical",
-        "subDomain": "damaged wire",
-        "owners": [
-            {
-                "name": "John",
-                "avatar": "https://avatars.dicebear.com/api/avataaars/6.svg"
-            }
-        ],
-        "description": "looks like a rat took the wire offsdf SLDFJSLKDJF",
         "status": "Ready",
         "createdDate": "2/2/2022"
     }

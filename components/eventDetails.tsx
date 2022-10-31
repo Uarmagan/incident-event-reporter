@@ -1,7 +1,7 @@
 'use client';
 
 import { Event } from '../types/events.interface';
-import Image from 'next/image';
+import { OwnerItem } from './ownerItem';
 
 export const EventDetails = ({ event }: { event: Event }) => {
   return (
@@ -36,24 +36,7 @@ export const EventDetails = ({ event }: { event: Event }) => {
                 key={owner.name + index}
                 className=' flex w-48 items-center justify-between divide-y divide-gray-200 rounded-md border border-gray-200 py-3 pl-3 pr-4 text-sm hover:cursor-pointer'
               >
-                <div className='flex items-center'>
-                  <Image
-                    className='inline-block h-9 w-9 rounded-full'
-                    src={owner.avatar}
-                    alt=''
-                    width={36}
-                    height={36}
-                  />
-
-                  <div className='ml-3'>
-                    <p className='text-sm font-medium text-gray-700 group-hover:text-gray-900'>
-                      {owner.name}
-                    </p>
-                    <p className='text-xs font-medium text-gray-500 group-hover:text-gray-700'>
-                      View profile
-                    </p>
-                  </div>
-                </div>
+                <OwnerItem owner={owner} />
               </li>
             ))}
           </ul>

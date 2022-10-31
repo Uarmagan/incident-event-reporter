@@ -4,18 +4,31 @@ import { useState } from 'react';
 import { EventDetails } from '../../components/eventDetails';
 import { useEventById } from '../../hooks/useEvents';
 import { EventEdit } from '../../components/eventEdit';
+import { useQueryClient, useMutation } from '@tanstack/react-query';
+import { deleteEvent } from '../../hooks/useEvents';
 
 export default function EventDetailPage(): JSX.Element | undefined {
-  const { query } = useRouter();
+  const { query, replace } = useRouter();
   const {
     data: event,
     isLoading,
     isSuccess,
   } = useEventById(query.id as string);
   const [editMode, setEditMode] = useState(false);
-  const onClick = async () => {
-    console.log('clicked');
-  };
+
+  const queryClient = useQueryClient();
+
+  const { mutate } = useMutation(deleteEvent, {
+    onMutate: (data) => {
+      queryClient.setQueryData(['events'], data);
+      replace('/events');
+    },
+    onSuccess: () => {
+      // trigger the old data to be invalidated
+      queryClient.invalidateQueries(['events']);
+      replace('/events');
+    },
+  });
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -51,14 +64,8 @@ export default function EventDetailPage(): JSX.Element | undefined {
           <div className='mt-10 flex space-x-5'>
             <button
               type='button'
-              className='inline-flex items-center rounded-md border border-transparent bg-green-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-75'
-              // disabled={statusSelected === event.status}
-            >
-              Save
-            </button>
-            <button
-              type='button'
               className=' inline-flex items-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
+              onClick={() => mutate(event)}
             >
               delete
             </button>
