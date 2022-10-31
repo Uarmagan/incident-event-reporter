@@ -46,7 +46,6 @@ export const createEvent = async (event: Event) => {
     newDate.getFullYear();
 
   const eventWithDate = { ...event, createdDate };
-  console.log('evveeent ', eventWithDate);
   const requestOptions = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

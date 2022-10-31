@@ -1,7 +1,6 @@
 import { Event } from '../types/events.interface';
 import { OwnerItem } from './ownerItem';
 import { classNames } from '../utils/tailwind.util';
-import { getBadgeColor } from '../utils/badgeColor.util';
 
 export const EventDetails = ({ event }: { event: Event }) => {
   return (
@@ -16,9 +15,7 @@ export const EventDetails = ({ event }: { event: Event }) => {
       </div>
       <div className='sm:col-span-1'>
         <dt className='text-sm font-medium text-gray-500'>Status</dt>
-        <dd className={classNames(`mt-1 text-sm`, getBadgeColor(event.status))}>
-          {event.status}
-        </dd>
+        <dd className='mt-1 text-sm'>{event.status}</dd>
       </div>
       <div className='sm:col-span-1'>
         <dt className='text-sm font-medium text-gray-500'>Created On</dt>

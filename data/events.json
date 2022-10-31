@@ -1,70 +1,109 @@
 [
-  {
-    "id": "3",
-    "domain": "electrical",
-    "subDomain": "damaged wire",
-    "owners": [
-      {
-        "name": "John",
-        "avatar": "https://avatars.dicebear.com/api/avataaars/3.svg"
-      },
-      {
-        "name": "Tom",
-        "avatar": "https://avatars.dicebear.com/api/avataaars/12.svg"
-      },
-      {
-        "name": "Bob",
-        "avatar": "https://avatars.dicebear.com/api/avataaars/13.svg"
-      },
-      {
-        "name": "Alice",
-        "avatar": "https://avatars.dicebear.com/api/avataaars/14.svg"
-      }
-    ],
-    "description": "looks like a rat chewed the wire off",
-    "status": "In Progress",
-    "createdDate": "02/02/2022"
-  },
-  {
-    "name": "",
-    "domain": "Mechanical",
-    "status": "Ready",
-    "owners": [
-      {
-        "name": "Rod",
-        "avatar": "https://avatars.dicebear.com/api/avataaars/8393854a-4d72-4c74-9f9e-4ec24f266753.svg"
-      }
-    ],
-    "subDomain": "fire",
-    "description": "Fire in a factory",
-    "createdDate": "10/30/2022",
-    "id": 5
-  },
-  {
-    "name": "",
-    "domain": "electrical",
-    "status": "Fixed",
-    "owners": [
-      {
-        "name": "Ugur",
-        "avatar": "https://avatars.dicebear.com/api/avataaars/2164802d-e4ef-4df9-9871-70933bd50e22.svg"
-      },
-      {
-        "name": "Chris",
-        "avatar": "https://avatars.dicebear.com/api/avataaars/c975fd12-e23a-447e-a1c1-ad32ece2093e.svg"
-      },
-      {
-        "name": "Tristan",
-        "avatar": "https://avatars.dicebear.com/api/avataaars/348028d5-c3b6-439a-a130-5d47ddc2c4fb.svg"
-      },
-      {
+    {
+        "id": "3",
+        "domain": "electrical",
+        "subDomain": "damaged wire",
+        "owners": [
+            {
+                "name": "John",
+                "avatar": "https://avatars.dicebear.com/api/avataaars/3.svg"
+            },
+            {
+                "name": "Tom",
+                "avatar": "https://avatars.dicebear.com/api/avataaars/12.svg"
+            },
+            {
+                "name": "Bob",
+                "avatar": "https://avatars.dicebear.com/api/avataaars/13.svg"
+            },
+            {
+                "name": "Alice",
+                "avatar": "https://avatars.dicebear.com/api/avataaars/14.svg"
+            }
+        ],
+        "description": "looks like a rat chewed the wire off",
+        "status": "In Progress",
+        "createdDate": "02/02/2022"
+    },
+    {
         "name": "",
-        "avatar": "https://avatars.dicebear.com/api/avataaars/171ba7a9-6f7c-4364-92b1-a284b69d0464.svg"
-      }
-    ],
-    "description": "Breaker is blown",
-    "subDomain": "fire",
-    "createdDate": "10/30/2022",
-    "id": 6
-  }
+        "domain": "electrical",
+        "status": "Fixed",
+        "owners": [
+            {
+                "name": "Ugur",
+                "avatar": "https://avatars.dicebear.com/api/avataaars/2164802d-e4ef-4df9-9871-70933bd50e22.svg"
+            },
+            {
+                "name": "Chris",
+                "avatar": "https://avatars.dicebear.com/api/avataaars/c975fd12-e23a-447e-a1c1-ad32ece2093e.svg"
+            },
+            {
+                "name": "Tristan",
+                "avatar": "https://avatars.dicebear.com/api/avataaars/348028d5-c3b6-439a-a130-5d47ddc2c4fb.svg"
+            },
+            {
+                "name": "",
+                "avatar": "https://avatars.dicebear.com/api/avataaars/171ba7a9-6f7c-4364-92b1-a284b69d0464.svg"
+            }
+        ],
+        "description": "Breaker is blown",
+        "subDomain": "fire",
+        "createdDate": "10/30/2022",
+        "id": 6
+    },
+    {
+        "name": "",
+        "domain": "Software",
+        "status": "Ready",
+        "owners": [
+            {
+                "name": "Randy",
+                "avatar": "https://avatars.dicebear.com/api/avataaars/05ea81e3-68f3-428c-97a8-3a8188cf355d.svg"
+            },
+            {
+                "name": "Smith",
+                "avatar": "https://avatars.dicebear.com/api/avataaars/1adb4f73-73a4-4944-a0af-94480b843904.svg"
+            },
+            {
+                "name": "Terry",
+                "avatar": "https://avatars.dicebear.com/api/avataaars/33417e93-0b2b-40ad-aa02-1d4e37a67dfd.svg"
+            },
+            {
+                "name": "Tammy",
+                "avatar": "https://avatars.dicebear.com/api/avataaars/ae509b56-a9c4-498b-8954-4e41b8db4965.svg"
+            },
+            {
+                "name": "Carter",
+                "avatar": "https://avatars.dicebear.com/api/avataaars/ac1a03b7-f881-4e15-87d4-db6bd5cf9006.svg"
+            },
+            {
+                "name": "EJ",
+                "avatar": "https://avatars.dicebear.com/api/avataaars/d436a937-8b20-4108-9589-9b8d8beb2e70.svg"
+            },
+            {
+                "name": "Patty",
+                "avatar": "https://avatars.dicebear.com/api/avataaars/073e8668-4169-48d4-913f-73768d4f5b6e.svg"
+            }
+        ],
+        "subDomain": "servers down",
+        "description": "Servers went down for a brief time. We had the whole team troubleshoot.",
+        "createdDate": "10/31/2022",
+        "id": 7
+    },
+    {
+        "name": "",
+        "domain": "Mechanical",
+        "status": "Ready",
+        "owners": [
+            {
+                "name": "Chris",
+                "avatar": "https://avatars.dicebear.com/api/avataaars/4619282a-4e92-4647-91f9-ac1322811f64.svg"
+            }
+        ],
+        "subDomain": "cracked machine",
+        "description": "Machine blew up to a billion pieces because there was a crack",
+        "createdDate": "10/31/2022",
+        "id": 8
+    }
 ]
