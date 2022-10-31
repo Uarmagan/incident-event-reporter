@@ -26,6 +26,7 @@ export const EventEdit = (prop: {
     e.preventDefault();
     mutate(event);
   };
+
   const removeOwner = (index: number) => {
     event.owners.splice(index, 1);
     setEvent({ ...event });
@@ -33,6 +34,7 @@ export const EventEdit = (prop: {
 
   const [event, setEvent] = useState(prop.event);
   const [newOwner, setNewOwner] = useState('');
+
   const handleChange = (e: any) => {
     e.preventDefault();
     setEvent({ ...event, [e.target.name]: e.target.value });

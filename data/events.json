@@ -1,42 +1,70 @@
 [
-    {
-        "id": "3",
-        "domain": "electrical",
-        "subDomain": "damaged wire",
-        "owners": [
-            {
-                "name": "John",
-                "avatar": "https://avatars.dicebear.com/api/avataaars/3.svg"
-            },
-            {
-                "name": "Tom",
-                "avatar": "https://avatars.dicebear.com/api/avataaars/12.svg"
-            },
-            {
-                "name": "Bob",
-                "avatar": "https://avatars.dicebear.com/api/avataaars/13.svg"
-            },
-            {
-                "name": "Alice",
-                "avatar": "https://avatars.dicebear.com/api/avataaars/14.svg"
-            }
-        ],
-        "description": "looks like a rat chewed the wire off",
-        "status": "In Progress",
-        "createdDate": "2/2/2022"
-    },
-    {
+  {
+    "id": "3",
+    "domain": "electrical",
+    "subDomain": "damaged wire",
+    "owners": [
+      {
+        "name": "John",
+        "avatar": "https://avatars.dicebear.com/api/avataaars/3.svg"
+      },
+      {
+        "name": "Tom",
+        "avatar": "https://avatars.dicebear.com/api/avataaars/12.svg"
+      },
+      {
+        "name": "Bob",
+        "avatar": "https://avatars.dicebear.com/api/avataaars/13.svg"
+      },
+      {
+        "name": "Alice",
+        "avatar": "https://avatars.dicebear.com/api/avataaars/14.svg"
+      }
+    ],
+    "description": "looks like a rat chewed the wire off",
+    "status": "In Progress",
+    "createdDate": "02/02/2022"
+  },
+  {
+    "name": "",
+    "domain": "Mechanical",
+    "status": "Ready",
+    "owners": [
+      {
+        "name": "Rod",
+        "avatar": "https://avatars.dicebear.com/api/avataaars/8393854a-4d72-4c74-9f9e-4ec24f266753.svg"
+      }
+    ],
+    "subDomain": "fire",
+    "description": "Fire in a factory",
+    "createdDate": "10/30/2022",
+    "id": 5
+  },
+  {
+    "name": "",
+    "domain": "electrical",
+    "status": "Fixed",
+    "owners": [
+      {
+        "name": "Ugur",
+        "avatar": "https://avatars.dicebear.com/api/avataaars/2164802d-e4ef-4df9-9871-70933bd50e22.svg"
+      },
+      {
+        "name": "Chris",
+        "avatar": "https://avatars.dicebear.com/api/avataaars/c975fd12-e23a-447e-a1c1-ad32ece2093e.svg"
+      },
+      {
+        "name": "Tristan",
+        "avatar": "https://avatars.dicebear.com/api/avataaars/348028d5-c3b6-439a-a130-5d47ddc2c4fb.svg"
+      },
+      {
         "name": "",
-        "domain": "electrical",
-        "status": "Ready",
-        "owners": [
-            {
-                "name": "fdsf",
-                "avatar": "https://avatars.dicebear.com/api/avataaars/6b23d174-1899-437b-aba2-7872b9b8ee7c.svg"
-            }
-        ],
-        "description": "sdf",
-        "createdDate": "10/30/2022",
-        "id": 4
-    }
+        "avatar": "https://avatars.dicebear.com/api/avataaars/171ba7a9-6f7c-4364-92b1-a284b69d0464.svg"
+      }
+    ],
+    "description": "Breaker is blown",
+    "subDomain": "fire",
+    "createdDate": "10/30/2022",
+    "id": 6
+  }
 ]
