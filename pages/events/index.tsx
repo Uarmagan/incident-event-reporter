@@ -1,3 +1,4 @@
+//  @ts-nocheck
 import Link from 'next/link';
 import { useEvents } from '../../hooks/useEvents';
 import { EventRow } from '../../components/eventRow';

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { PencilIcon } from '@heroicons/react/24/outline';
 import { useRouter } from 'next/router';
 import { useState } from 'react';

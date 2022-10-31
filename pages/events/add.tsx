@@ -1,3 +1,4 @@
+//  @ts-nocheck
 import { useState } from 'react';
 import { domains, statusList } from '../../utils/staticData';
 import { createEvent } from '../../http/events';
