@@ -8,6 +8,8 @@ Please don't update the `data/events.json` as that is where the data lives and c
 
 ## Run Locally
 
+Pre-req: Node 16+
+
 Install dependencies
 
 ```bash
