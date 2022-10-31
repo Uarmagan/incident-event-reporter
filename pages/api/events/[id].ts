@@ -1,5 +1,6 @@
 import { apiHandler } from '../../../helpers/api-handler';
 import { eventsRepo } from '../../../helpers/events-repo';
+import { NextApiRequest, NextApiResponse } from 'next';
 
 export default apiHandler({
   get: getById,
@@ -7,14 +8,14 @@ export default apiHandler({
   delete: _delete,
 });
 
-function getById(req, res) {
+function getById(req: NextApiRequest, res: NextApiResponse) {
   const event = eventsRepo.getById(req.query.id);
 
   if (!event) throw 'event Not Found';
   return res.status(200).json(event);
 }
 
-function update(req, res) {
+function update(req: NextApiRequest, res: NextApiResponse) {
   const event = eventsRepo.getById(req.query.id);
 
   if (!event) throw 'event Not Found';
@@ -23,7 +24,7 @@ function update(req, res) {
   return res.status(200).json({});
 }
 
-function _delete(req, res) {
+function _delete(req: NextApiRequest, res: NextApiResponse) {
   eventsRepo.delete(req.query.id);
   return res.status(200).json({});
 }

@@ -9,13 +9,27 @@ export function useEvents() {
   return useQuery(['allEvents'], () => getAllEvents());
 }
 
-export const getEventByID = async (id: string): Promise<Event> => {
+const getEventByID = async (id: string): Promise<Event> => {
   const res = await fetch(`http://localhost:3000/api/events/${id}`);
   return res.json();
 };
 
 export function useEventById(id: string) {
-  return useQuery(['post', id], () => getEventByID(id), {
+  return useQuery(['events', id], () => getEventByID(id), {
     enabled: !!id,
   });
 }
+
+export const updateEvent = async ({ id, ...updatedUser }: any) => {
+  // return api.put(`/api/users/${id}`, updatedUser).then(({ data }) => data);
+  const requestOptions = {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ ...updatedUser }),
+  };
+  const res = await fetch(
+    `http://localhost:3000/api/events/${id}`,
+    requestOptions
+  );
+  return res.json();
+};

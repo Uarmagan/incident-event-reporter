@@ -29,8 +29,8 @@ type domains = {
   };
 };
 
-type electricalSubDomains = 'blown Breaker' | 'damaged Wire' | 'water Damage';
-type mechanicalSubDomains = 'broken Pipe' | 'fire' | 'cracked machine';
+type electricalSubDomains = 'blown breaker' | 'damaged wire' | 'water damage';
+type mechanicalSubDomains = 'broken pipe' | 'fire' | 'cracked machine';
 type softwareSubDomains =
   | 'production incedent'
   | 'servers down'

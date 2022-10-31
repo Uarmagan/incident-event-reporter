@@ -5,6 +5,7 @@ import { EventsAvatars } from '../../components/eventsAvatars';
 
 export default function EventsPage(): JSX.Element {
   const { data: events, isLoading } = useEvents();
+
   if (isLoading) {
     return <div>Loading...</div>;
   }

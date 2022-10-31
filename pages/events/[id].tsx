@@ -3,11 +3,15 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { EventDetails } from '../../components/eventDetails';
 import { useEventById } from '../../hooks/useEvents';
+import { EventEdit } from '../../components/eventEdit';
 
-export default function EventDetailPage(): JSX.Element {
+export default function EventDetailPage(): JSX.Element | undefined {
   const { query } = useRouter();
-  console.log('id ', query.id);
-  const { data: event, isLoading } = useEventById(query.id);
+  const {
+    data: event,
+    isLoading,
+    isSuccess,
+  } = useEventById(query.id as string);
   const [editMode, setEditMode] = useState(false);
   const onClick = async () => {
     console.log('clicked');
@@ -16,7 +20,7 @@ export default function EventDetailPage(): JSX.Element {
   if (isLoading) {
     return <div>Loading...</div>;
   }
-  if (event) {
+  if (isSuccess) {
     return (
       <div className='overflow-hidden sm:rounded-lg'>
         <div className='py-5 '>
@@ -29,8 +33,9 @@ export default function EventDetailPage(): JSX.Element {
         </div>
         <div>
           <button
-            className=' mb-5 inline-flex justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm '
-            // onClick={onClick}
+            className=' mb-5 inline-flex justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm disabled:opacity-70'
+            onClick={() => setEditMode(true)}
+            disabled={editMode}
           >
             <PencilIcon
               className='-ml-1 mr-2 h-5 w-5 text-gray-400'
@@ -38,7 +43,11 @@ export default function EventDetailPage(): JSX.Element {
             />
             <span>Edit</span>
           </button>
-          <EventDetails event={event} />
+          {editMode ? (
+            <EventEdit event={event} setEditMode={setEditMode} />
+          ) : (
+            <EventDetails event={event} />
+          )}
           <div className='mt-10 flex space-x-5'>
             <button
               type='button'
