@@ -1,5 +1,3 @@
-import { Status } from '../types/events.interface';
-
 export const domains = {
   electrical: ['blown breaker', 'damaged wire', 'water damage'],
   Mechanical: ['broken pipe', 'fire', 'cracked machine'],

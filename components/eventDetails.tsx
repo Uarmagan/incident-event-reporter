@@ -1,6 +1,5 @@
 import { Event } from '../types/events.interface';
 import { OwnerItem } from './ownerItem';
-import { classNames } from '../utils/tailwind.util';
 
 export const EventDetails = ({ event }: { event: Event }) => {
   return (

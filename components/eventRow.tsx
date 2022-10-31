@@ -1,4 +1,3 @@
-import { classNames } from '../utils/tailwind.util';
 import Link from 'next/link';
 import { Event } from '../types/events.interface';
 import { EventsAvatars } from './eventsAvatars';
