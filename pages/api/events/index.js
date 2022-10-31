@@ -1,5 +1,5 @@
 import { apiHandler } from '../../../helpers/api-handler';
-import { eventsRepo, getAll } from '../../../helpers/events-repo';
+import { eventsRepo } from '../../../helpers/events-repo';
 export default apiHandler({
   get: getEvents,
   post: add,
@@ -11,7 +11,7 @@ function getEvents(req, res) {
 }
 
 function add(req, res) {
-  const { event } = req.body;
+  const event = req.body;
   eventsRepo.create(event);
   return res.status(200).json({});
 }

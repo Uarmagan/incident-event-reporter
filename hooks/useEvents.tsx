@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
-import { getAllEvents, getEventByID } from '../http/events';
-import { Event } from '../types/events.interface';
+import { getAllEvents, getEventByID, updateEvent } from '../http/events';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 export function useEvents() {
   return useQuery(['allEvents'], () => getAllEvents());

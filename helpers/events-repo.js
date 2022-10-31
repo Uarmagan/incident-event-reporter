@@ -15,7 +15,6 @@ export const eventsRepo = {
 function create(event) {
   // generate new event id
   event.id = events.length ? Math.max(...events.map((x) => x.id)) + 1 : 1;
-
   // add and save event
   events.push(event);
   saveData();

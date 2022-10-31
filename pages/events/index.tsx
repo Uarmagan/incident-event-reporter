@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { useEvents } from '../../hooks/useEvents';
-import { Event } from '../../types/events.interface';
 import { EventsAvatars } from '../../components/eventsAvatars';
+import { getBadgeColor } from '../../utils/badgeColor.util';
+import { classNames } from '../../utils/tailwind.util';
 
 export default function EventsPage(): JSX.Element {
   const { data: events, isLoading } = useEvents();
@@ -9,6 +10,7 @@ export default function EventsPage(): JSX.Element {
   if (isLoading) {
     return <div>Loading...</div>;
   }
+
   return (
     <>
       <div className='sm:flex sm:items-center'>
@@ -72,6 +74,7 @@ export default function EventsPage(): JSX.Element {
                       createdDate,
                     }) => (
                       <Link
+                        key={id}
                         href={`/events/${id}`}
                         className='hover:bg-gray-200'
                       >
@@ -93,7 +96,12 @@ export default function EventsPage(): JSX.Element {
                             <EventsAvatars owners={owners} />
                           </td>
                           <td className='whitespace-nowrap px-3 py-4 text-sm text-gray-500'>
-                            <span className='inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800'>
+                            <span
+                              className={classNames(
+                                'text-green-80 inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5',
+                                getBadgeColor(status)
+                              )}
+                            >
                               {status}
                             </span>
                           </td>

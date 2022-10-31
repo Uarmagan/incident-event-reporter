@@ -1,4 +1,3 @@
-'use client';
 import { classNames } from '../utils/tailwind.util';
 import { Owner } from '../types/events.interface';
 import Image from 'next/image';

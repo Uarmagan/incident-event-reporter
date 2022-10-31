@@ -14,7 +14,6 @@ function getById(req: NextApiRequest, res: NextApiResponse) {
   if (!event) throw 'event Not Found';
   return res.status(200).json(event);
 }
-
 function update(req: NextApiRequest, res: NextApiResponse) {
   const event = eventsRepo.getById(req.query.id);
 

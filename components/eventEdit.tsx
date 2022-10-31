@@ -1,17 +1,8 @@
-'use client';
-
 import { Event } from '../types/events.interface';
 import { useState } from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { updateEvent } from '../hooks/useEvents';
-
-const domains = {
-  electrical: ['blown breaker', 'damaged wire', 'water damage'],
-  Mechanical: ['broken pipe', 'fire', 'cracked machine'],
-  Software: ['production incedent', 'servers down', 'database error'],
-};
-
-const statusList = ['Ready', 'In Progress', 'Fixed'];
+import { updateEvent } from '../http/events';
+import { domains, statusList } from '../utils/staticData';
 
 export const EventEdit = (prop: {
   event: Event;

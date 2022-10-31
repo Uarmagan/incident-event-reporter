@@ -5,10 +5,10 @@ import { EventDetails } from '../../components/eventDetails';
 import { useEventById } from '../../hooks/useEvents';
 import { EventEdit } from '../../components/eventEdit';
 import { useQueryClient, useMutation } from '@tanstack/react-query';
-import { deleteEvent } from '../../hooks/useEvents';
+import { deleteEvent } from '../../http/events';
 
 export default function EventDetailPage(): JSX.Element | undefined {
-  const { query, replace } = useRouter();
+  const { query, replace, push } = useRouter();
   const {
     data: event,
     isLoading,
@@ -62,6 +62,13 @@ export default function EventDetailPage(): JSX.Element | undefined {
             <EventDetails event={event} />
           )}
           <div className='mt-10 flex space-x-5'>
+            <button
+              type='button'
+              className=' inline-flex items-center rounded-md border border-transparent bg-transparent px-4 py-2 text-sm font-medium text-blue-900 shadow-sm'
+              onClick={() => push('/events')}
+            >
+              {'<-'} Go Back
+            </button>
             <button
               type='button'
               className=' inline-flex items-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'

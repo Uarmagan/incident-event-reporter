@@ -1,4 +1,8 @@
-export function apiHandler(handler) {
+import { errorHandler } from './api-handler';
+
+export { apiHandler };
+
+function apiHandler(handler) {
   return async (req, res) => {
     const method = req.method.toLowerCase();
     // check handler supports HTTP method
@@ -10,6 +14,7 @@ export function apiHandler(handler) {
       await handler[method](req, res);
     } catch (err) {
       // global error handler
+      console.log('apiHandler error', err);
       errorHandler(err, res);
     }
   };
