@@ -16,8 +16,8 @@ export default function EventsPage(): JSX.Element {
         <div className='sm:flex-auto'>
           <h1 className='text-xl font-semibold text-gray-900'>Events</h1>
           <p className='mt-2 text-sm text-gray-700'>
-            A list of all the Events at Diamond Age. Click an event to see more
-            details.
+            A list of all the Events at your work site. Click an event to see
+            more details.
           </p>
         </div>
         <Link href='/events/add' className='mt-4 sm:mt-0 sm:ml-16 sm:flex-none'>

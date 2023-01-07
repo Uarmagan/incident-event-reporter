@@ -36,8 +36,8 @@ export default function Layout({ children }: any) {
       <div className='grid h-full grid-cols-[1fr_4fr] gap-1'>
         <div className='flex flex-col overflow-y-auto border-r border-gray-200 bg-white pt-5 pb-4'>
           <div className='flex flex-shrink-0 items-center px-4'>
-            <h1 className='font-mono font-black tracking-widest text-gray-600'>
-              Diamond Age
+            <h1 className='font-mono font-black tracking-widest tracking-tight text-gray-600'>
+              Incident Reporter
             </h1>
           </div>
           <div className='mt-5 flex flex-grow flex-col'>
